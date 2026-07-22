@@ -1,0 +1,60 @@
+<!-- Footer -->
+
+<style>
+  .footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px; /* Adjust the margin as needed */
+  }
+
+  .footer-logos {
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+
+  .footer-logos img {
+    margin: 0 18px; /* Adjust the margin as needed for spacing between logos */
+    max-width: 100px; /* Set the maximum width for each logo */
+    max-height: 60px;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+  }
+</style>
+
+<script type="text/javascript">
+function footerAlign() {
+  $('footer').css('display', 'block');
+  $('footer').css('height', 'auto');
+  var footerHeight = $('footer').outerHeight();
+  $('body').css('padding-bottom', footerHeight);
+  $('footer').css('height', footerHeight);
+}
+
+
+$(document).ready(function(){
+  footerAlign();
+});
+
+$( window ).resize(function() {
+  footerAlign();
+});
+</script>
+
+<footer class="footer">
+
+<div class="footer-logos">
+  <img src="/schema_logo.png" alt="SCHEMA" style="max-width: 90px; max-height: 90px;">
+  <img src="/mit_logo.png" alt="MIT" style="max-width: 120px;">
+  <img src="/lids_logo.png" alt="LIDS">
+  <img src="/caltech_logo.png" alt="Caltech">
+  <img src="/berkeley_logo.png" alt="UC Berkeley">
+  <img src="/penn_logo.png" alt="University of Pennsylvania">
+  <img src="/afosr_logo.png" alt="AFOSR / AFRL">
+</div>
+
+<div class="copyright-text">
+  © SCHEMA {{ 'now' | date: "%Y" }}. An AFOSR/AFRL University Center of Excellence. Leveraging Jekyll-Scholar. <a href="http://accessibility.mit.edu/">Accessibility</a>.
+</div>
+</footer>

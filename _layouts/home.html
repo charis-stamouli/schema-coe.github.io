@@ -1,0 +1,187 @@
+---
+title: {{site.title}}
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  {% include relBase.html %}
+
+  <style>
+    .schema-hero {
+      background: linear-gradient(135deg, #14213d 0%, #2d3a5e 55%, #3f3c78 100%);
+      color: #fff;
+      padding: 60px 0 50px 0;
+    }
+    .schema-hero h1 { font-weight: 700; letter-spacing: 1px; margin-top: 0; }
+    .schema-hero .subtitle { font-size: 2rem; opacity: .92; }
+    .schema-hero .acronym { color: #8fd0a6; }
+    .schema-badge {
+      display: inline-block; margin-bottom: 18px; padding: 5px 14px;
+      border: 1px solid rgba(255,255,255,.5); border-radius: 999px;
+      font-size: .8rem; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .schema-logo-hero { max-width: 210px; width: 100%; height: auto; }
+    .theme-card {
+      border-radius: 14px; padding: 22px; height: 100%;
+      background: #fff; box-shadow: 0 6px 24px rgba(0,0,0,.08);
+      border-top: 5px solid var(--accent, #14213d);
+    }
+    .theme-card h4 { margin-top: 0; font-weight: 700; }
+    .theme-tag { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent, #14213d); font-weight: 700; }
+    .partner-strip img { max-height: 78px; max-width: 190px; margin: 18px 30px; object-fit: contain; }
+    @media (max-width: 600px) { .partner-strip img { max-height: 56px; max-width: 130px; margin: 12px 16px; } }
+  </style>
+
+  <body id="page-top" class="index">
+    {% include navbar.html %}
+    <header>
+
+      <!-- Hero -->
+      <div class="schema-hero">
+        <div class="container">
+          <div class="row" style="align-items:center; display:flex; flex-wrap:wrap;">
+            <div class="col-md-8">
+              <span class="schema-badge">AFOSR / AFRL University Center of Excellence</span>
+              <h1><span class="acronym">SCHEMA</span></h1>
+              <p class="subtitle">Scalable Compositional Hierarchies for Evolvable Multi-agent Architectures</p>
+              <p style="max-width:640px; margin-top:16px;">
+                A framework for the modular <b>synthesis, adaptation, and verification</b> of multi-agent autonomous systems &mdash;
+                composing autonomy both <b>horizontally</b> across heterogeneous agents and <b>vertically</b> across the layers of each agent's stack.
+              </p>
+            </div>
+            <div class="col-md-4" style="text-align:center;">
+              <img class="schema-logo-hero" src="{{ site.baseurl }}/schema_logo.png" alt="SCHEMA logo">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" style="margin-top: 40px;">
+            <h2 class="black-text">A Center of Excellence for Compositional Autonomy</h2>
+            <p>
+              <b>SCHEMA</b> is an Air Force Office of Scientific Research (AFOSR) and Air Force Research Laboratory (AFRL)
+              <b>University Center of Excellence</b>, established under the FY25 program on Compositional Optimization, Dynamical Systems and
+              Control (CODAC). It unites five research groups across four institutions, the
+              <b>Massachusetts Institute of Technology</b> (lead), the <b>California Institute of Technology</b>, the
+              <b>University of California, Berkeley</b>, and the <b>University of Pennsylvania</b>, around a single question: how do we
+              build autonomy that can <i>grow</i>?
+            </p>
+            <p>
+              Tomorrow's missions will be carried out not by a single robot but by <b>evolving teams of heterogeneous agents</b>, such as drones,
+              humanoids, legged and wheeled robots, working together in dynamic, uncertain, and contested environments. Today, the pieces
+              of their autonomy (control, planning, learning, and system integration) are designed in isolation, producing architectures that are
+              brittle and hard to change. Adding a new platform, swapping a sensor, or revising a mission can mean re-engineering the whole stack.
+            </p>
+            <p>
+              SCHEMA's central idea is <b>compositionality</b>: the ability to guarantee how a whole system behaves from the way its parts are put
+              together, both <b>horizontally</b>, across agents in a fleet, and <b>vertically</b>, across the layers of a single agent's
+              autonomy stack. By giving these compositions a common, formal language, we aim to make autonomy architectures that are modular,
+              scalable, safe, and able to evolve over time without being rebuilt from scratch.
+            </p>
+            <p>
+              Our research is organized around three interlocking themes. In <b>Theme A &mdash; Horizontal Composition</b>, we compose a fleet of
+              heterogeneous agents, matching what each platform needs against what it provides so the team stays interoperable and scalable as agents
+              are added or reconfigured. In <b>Theme B &mdash; Vertical Composition</b>, we decompose a single agent's autonomy stack &mdash; from
+              high-level decision-making down to trajectory planning and real-time control &mdash; so the layers stay consistent and safety is
+              preserved end to end. In <b>Theme C &mdash; Global&ndash;Local Integration</b>, we bring the two together, making the structure inside
+              each agent compatible with the structure across the fleet, and reasoning about how agent-level and fleet-level capabilities trade off.
+              The figure below illustrates how the three fit together.
+            </p>
+            <p class="black-text" style="margin-top:16px;">
+              Read more about the <a class="black-link" href="/Research"><b>vision</b></a>, meet the
+              <a class="black-link" href="/people"><b>people</b></a>, or browse our <a class="black-link" href="/publications"><b>publications</b></a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concept figure -->
+      <div class="container" style="margin-top: 26px;">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="text-align:center;">
+            <img src="{{ site.baseurl }}/afosr_final.jpeg" alt="SCHEMA: horizontal and vertical composition across a heterogeneous fleet" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 6px 24px rgba(0,0,0,.10);">
+            <p style="color:#666; font-size:15px; margin-top:10px;">
+              SCHEMA's three themes: horizontal composition across a heterogeneous fleet (Theme A), vertical composition within each agent's
+              autonomy stack (Theme B), and their unified global&ndash;local integration (Theme C).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- Upcoming Events + Publications -->
+      <div class="container">
+        <div class="row" style="margin-top: 30px; margin-bottom: 30px;">
+          <div class="col-md-12">
+            <h2 class="black-text">Upcoming Events</h2>
+            <ul>
+              <li><b>SCHEMA Kickoff Meeting</b> &mdash; TBD, September 2026.</li>
+            </ul>
+            <p class="black-text">See the full <a class="black-link" href="/events"><b>events</b></a> page for classes and activities connected to the center.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- News -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="black-text">News</h2>
+            {% assign event_count = 0 %}
+            {% for item in site.data.news reversed %}
+              {% for event in item.events reversed %}
+                {% if event_count < 15 %}
+                  <div style="margin-bottom: 10px;"></div>
+                  <b>{{ event.date }}</b> - {{ event.description }} <br>
+                  {% assign event_count = event_count | plus: 1 %}
+                {% else %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              {% if event_count >= 15 %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            <br>
+            <p class="black-text">For the entire list of news, please refer to <b><a class="black-link" href="/news">news</a></b>!</p>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- Partner institutions -->
+      <div class="mit-stripe" style="padding-top: 10px; padding-bottom: 30px;">
+        <div class="container">
+          <div class="row" style="margin-top: 30px; margin-bottom: 10px;">
+            <div class="col-md-12 white-text">
+              <h2 class="white-text" style="text-align:center;">Partner Institutions</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="partner-strip" style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; padding:28px 20px; background:#fff; border-radius:12px;">
+                <img src="{{ site.baseurl }}/mit_logo.png" alt="MIT">
+                <img src="{{ site.baseurl }}/lids_logo.png" alt="LIDS">
+                <img src="{{ site.baseurl }}/caltech_logo.png" alt="Caltech">
+                <img src="{{ site.baseurl }}/berkeley_logo.png" alt="UC Berkeley">
+                <img src="{{ site.baseurl }}/penn_logo.png" alt="University of Pennsylvania">
+                <img src="{{ site.baseurl }}/afosr_logo.png" alt="AFOSR / AFRL">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+
+    </header>
+
+    {% include javascript.html %}
+    {% include footer.html %}
+  </body>
+</html>

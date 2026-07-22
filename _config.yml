@@ -1,0 +1,78 @@
+# Welcome to Jekyll!
+# (redirect)
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: SCHEMA
+email: gzardini@mit.edu
+description: > # this means to ignore newlines until "baseurl:"
+  SCHEMA (Scalable Compositional Hierarchies for Evolvable Multi-agent Architectures) is an AFOSR/AFRL University Center of Excellence developing a unified framework for the modular synthesis, adaptation, and verification of multi-agent autonomous systems.
+# TODO: once the GitHub repo is created, set `baseurl` and `url` to match.
+#   - If served from https://<repo>.github.io           -> baseurl: ""            url: "https://<repo>.github.io"
+#   - If served from https://<org>.github.io/<repo>/    -> baseurl: "/<repo>"     url: "https://<org>.github.io"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://schema.mit.edu" # the base hostname & protocol for your site
+canonical_url: "https://schema.mit.edu" # the URL we use for canonical links.
+twitter_username: GioeleZardini
+github_username:  schema-coe
+
+# Build settings
+markdown: kramdown
+encoding: utf-8
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-scholar
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+plugins:
+  - jekyll-redirect-from
+
+# See https://github.com/jekyll/minima/issues/709, can be removed when minima ships another release
+sass:
+  quiet_deps: true
+
+
+
+collections:
+  slides:
+  people:
+    output: true
+    permalink: /:collection/:title/
+
+
+defaults:
+  - scope:
+      path: ""
+      type: people
+    values:
+      imgurl: /img/people/
+
+
+scholar:
+  style: ieee-zardini
+  source: ./_bibliography
+  # schema.bib is auto-generated at build time by _plugins/merge_bib.rb,
+  # which merges every per-PI file in _bibliography/pi/*.bib.
+  # PIs only ever edit their own _bibliography/pi/<name>.bib file.
+  bibliography: schema.bib
+  sort_by: year, month
+  order: descending, descending
+  group_by: none
+  #type_order: [article,inproceedings,techreport,thesis]
+  type_aliases: {Incollection: techreport}
+  bibliography_template: bib
+  reference_tagname: span class="entry"
+  bibliography_group_tag: 'h3'

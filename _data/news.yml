@@ -1,0 +1,8 @@
+- year: 2026
+  events:
+    - date: "07/2026"
+      description: "The SCHEMA website is live! Stay tuned as we build out the center's people, publications, and events."
+    - date: "07/2026"
+      description: "We are excited to announce <b>SCHEMA</b> &mdash; Scalable Compositional Hierarchies for Evolvable Multi-agent Architectures &mdash; a new AFOSR/AFRL University Center of Excellence under the FY25 Compositional Optimization, Dynamical Systems and Control (CODAC) program, led by MIT with partners at Caltech, UC Berkeley, and the University of Pennsylvania."
+    - date: "09/2026"
+      description: "Save the date: the <b>SCHEMA Kickoff Meeting</b> will be held at XXXX in late September 2026."

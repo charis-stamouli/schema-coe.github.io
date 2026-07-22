@@ -1,0 +1,128 @@
+---
+title: Events
+permalink: /events/
+group: "navigation"
+order: 4
+---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<style>
+  .event-card {
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 20px;
+    background: #fff; box-shadow: 0 4px 18px rgba(0,0,0,.07);
+    border-left: 5px solid #14213d;
+  }
+  .event-date { font-weight: 700; color: #14213d; }
+  .events-table { width: 100%; border-collapse: collapse; }
+  .events-table td { padding: 12px 16px 12px 0; vertical-align: top; border-bottom: 1px solid #eee; }
+  .events-table td.year { white-space: nowrap; font-weight: 700; color: #14213d; width: 70px; }
+  .tag-center {
+    display:inline-block; font-size:.72rem; text-transform:uppercase; letter-spacing:.5px;
+    background:#e7efe9; color:#2d6e46; border-radius:6px; padding:2px 8px; margin-left:6px; vertical-align:middle;
+  }
+  .events-intro { font-size:18px; line-height:1.65; }
+</style>
+<body id="page-top" class="index">
+  {% include navbar.html %}
+  <header>
+    <br><br><br>
+
+    <div class="white-stripe" style="margin-bottom: 20px;">
+      <div class="container">
+        <div class="row" style="padding-bottom: 10.4px;">
+          <div class="col-sm-12">
+            <h1 class="black-text"><b>Events</b></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="events-intro">
+            This page tracks the life of the center &mdash; upcoming meetings and, over time, an archive of the workshops, tutorials, seminars, and
+            classes connected to SCHEMA. Activities marked <span class="tag-center">SCHEMA</span> are organized or co-organized by center members
+            and are directly tied to our themes.
+          </p>
+
+          <!-- ===================== UPCOMING ===================== -->
+          <h2 class="black-text" style="margin-top:30px;">Upcoming</h2>
+
+          <div class="event-card">
+            <div class="event-date">Late September 2026 &mdash; Arlington, VA, USA</div>
+            <h4 style="margin:6px 0;">SCHEMA Kickoff Meeting <span class="tag-center">SCHEMA</span></h4>
+            <p style="margin:0;">
+              The inaugural meeting of the center, bringing together PIs and our AFOSR/AFRL program team to align on the
+              research vision, the three themes, and the experimental validation roadmap. Details to follow.
+            </p>
+          </div>
+
+          <!-- ===================== WORKSHOPS / TUTORIALS / SESSIONS ===================== -->
+          <h2 class="black-text" style="margin-top:36px;">Workshops, Tutorials &amp; Sessions</h2>
+          <p>Community activities organized by SCHEMA members, spanning compositional autonomy, control architectures, and multi-agent systems.</p>
+          <table class="events-table">
+            <tr>
+              <td class="year">2026</td>
+              <td>
+                <a href="https://cat-cdc26.github.io" target="_blank"><b>Workshop on Control Architectures Theory (CAT)</b></a> <span class="tag-center">SCHEMA</span><br>
+                Full day at the IEEE Conference on Decision and Control, Honolulu, HI, USA.<br>
+                Co-organized with Aaron Ames and Nikolai Matni.
+              </td>
+            </tr>
+            <tr>
+              <td class="year">2026</td>
+              <td>
+                <b>Invited Session on Control Architectures Theory (CAT)</b> <span class="tag-center">SCHEMA</span><br>
+                IEEE Conference on Decision and Control, Honolulu, HI, USA.<br>
+                Co-organized with Chris Verhoek, Runyu Zhang, Joe Moeller, Charis Stamouli, Nikolai Matni, Aaron Ames, and George J. Pappas.
+              </td>
+            </tr>
+            <tr>
+              <td class="year">2026</td>
+              <td>
+                <a href="https://acc26-mas.github.io/" target="_blank"><b>Workshop Toward Safe and Scalable Multi-Agent Systems</b></a> <span class="tag-center">SCHEMA</span><br>
+                American Control Conference, New Orleans, LA, USA.<br>
+                Co-organized with Runyu Zhang and Na Li.
+              </td>
+            </tr>
+            <tr>
+              <td class="year">2026</td>
+              <td>
+                <b>Workshop on Applied Category Theory for Compositional Decision Making</b> <span class="tag-center">SCHEMA</span><br>
+                American Control Conference, New Orleans, LA, USA.<br>
+                Co-organized with Joe Moeller, James Fairbanks, Hans Riess, and Aaron Ames.
+              </td>
+            </tr>
+          </table>
+
+          <!-- ===================== CLASSES ===================== -->
+          <h2 class="black-text" style="margin-top:36px;">Classes</h2>
+          <p>Courses at partner institutions connected to the center's themes.</p>
+          <table class="events-table">
+            <tr>
+              <td class="year">F25</td>
+              <td><a href="https://zardini.mit.edu/act4ed" target="_blank"><b>1.144: Applied Category Theory for Engineering Design</b></a> &mdash; MIT (Zardini)<br>
+                Compositional methods for engineering design, autonomy, and mobility. Watch the
+                <a href="https://youtu.be/h6WQ2fLda2A" target="_blank"><b>teaser</b></a>.</td>
+            </tr>
+            <tr>
+              <td class="year">TBA</td>
+              <td><i>Additional classes across MIT, Caltech, UC Berkeley, and Penn will be listed here as they are offered.</i></td>
+            </tr>
+          </table>
+
+          <!-- ===================== SEMINARS ===================== -->
+          <h2 class="black-text" style="margin-top:36px;">Seminars</h2>
+          <p><i>A SCHEMA seminar series is in the works. Talks and recordings will be archived here.</i></p>
+
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </header>
+  {% include javascript.html %}
+  {% include footer.html %}
+</body>
+</html>

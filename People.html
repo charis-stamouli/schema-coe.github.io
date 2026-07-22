@@ -1,0 +1,214 @@
+---
+title: People
+permalink: /people/
+group: "navigation"
+order: 3
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  {% include relBase.html %}
+
+  <style>
+    .fixed-image {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+    }
+    .person-name { margin-bottom: 2px; }
+    .person-inst { color: #555; font-size: .9rem; margin: 0; }
+    .lead-card img { border-radius: 20%; }
+
+    /* PI vertical list */
+    .pi-row { display: flex; flex-wrap: wrap; align-items: flex-start; margin-bottom: 34px; }
+    .pi-photo { flex: 0 0 200px; max-width: 200px; text-align: center; }
+    .pi-photo img { width: 180px; height: 180px; object-fit: cover; border-radius: 20%; }
+    .pi-bio { flex: 1 1 340px; padding-left: 24px; min-width: 280px; }
+    .pi-bio h3 { margin-top: 0; }
+    .pi-bio .person-inst { font-size: 1rem; margin-bottom: 6px; }
+    .lead-badge {
+      display:inline-block; font-size:.7rem; text-transform:uppercase; letter-spacing:1px;
+      background:#14213d; color:#fff; border-radius:6px; padding:3px 9px; margin-left:8px; vertical-align:middle;
+    }
+    @media (max-width: 600px) { .pi-bio { padding-left: 0; padding-top: 14px; } .pi-photo { flex-basis: 100%; max-width: 100%; } }
+  </style>
+
+  <body id="page-top" class="index">
+    {% include navbar.html %}
+    <header>
+      <br><br><br>
+
+
+      {% assign people = site.people | sort: 'last' %}
+
+      <!-- Principal Investigators (vertical list, Lead PI first, equal photo sizes) -->
+      <div class="white-stripe" style="height: 80px; margin-bottom: 40px;">
+        <div class="container">
+          <div class="row"><div class="col-sm-12">
+            <h1 class="black-text"><b>Principal Investigators</b></h1>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="container">
+        {% comment %} Lead PI first {% endcomment %}
+        {% for person in people %}{% if person.position == "pi" and person.lead %}
+          <div class="pi-row">
+            <div class="pi-photo">
+              <a href={{person.url}}>
+                <img src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
+              </a>
+            </div>
+            <div class="pi-bio">
+              <h3><a href={{person.url}}>{{ person.title }}</a><span class="lead-badge">Lead PI</span></h3>
+              <p class="person-inst">{{ person.institution }}</p>
+              <hr class="person-sep">
+              <div class="person-excerpt">{{ person.content }}</div>
+            </div>
+          </div>
+        {% endif %}{% endfor %}
+
+        {% comment %} Co-PIs, alphabetical by last name {% endcomment %}
+        {% for person in people %}{% if person.position == "pi" and person.lead != true %}
+          <div class="pi-row">
+            <div class="pi-photo">
+              <a href={{person.url}}>
+                <img src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
+              </a>
+            </div>
+            <div class="pi-bio">
+              <h3><a href={{person.url}}>{{ person.title }}</a></h3>
+              <p class="person-inst">{{ person.institution }}</p>
+              <hr class="person-sep">
+              <div class="person-excerpt">{{ person.content }}</div>
+            </div>
+          </div>
+        {% endif %}{% endfor %}
+      </div>
+
+      <!-- AFOSR / AFRL Program Team -->
+      <div class="white-stripe" style="margin-top: 20px; margin-bottom: 25px;">
+        <div class="container">
+          <div class="row" style="padding-bottom: 10.4px;">
+            <div class="col-sm-12">
+              <h1 class="black-text"><b>AFOSR / AFRL Program Team</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        {% assign loopindex = 0 %}
+        {% for person in people %}{% if person.position == "afosr" %}
+          {% assign loopindex = loopindex | plus: 1 %}
+          {% assign rowfinder = loopindex | modulo: 4 %}
+          {% if rowfinder == 1 %}<div class="row person-row">{% endif %}
+            <div class="col-3 col-sm-3 col-md-3">
+              <a href={{person.url}}>
+                <img class="img-responsive img-resize fixed-image" style="border-radius: 20%;" src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
+              </a>
+              <h6 class="person-name"><a href={{person.url}}>{{ person.title }}</a></h6>
+              <p class="person-inst">{{ person.institution }}</p>
+            </div>
+          {% if rowfinder == 0 %}</div>{% endif %}
+        {% endif %}{% endfor %}
+        {% if rowfinder != 0 %}</div>{% endif %}
+      </div>
+
+      <!-- Postdoctoral Scholars -->
+      <div class="white-stripe" style="margin-bottom: 25px;">
+        <div class="container">
+          <div class="row" style="padding-bottom: 10.4px;">
+            <div class="col-sm-12">
+              <h1 class="black-text"><b>Postdoctoral Scholars</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        {% assign loopindex = 0 %}
+        {% for person in people %}{% if person.position == "postdoc" %}
+          {% assign loopindex = loopindex | plus: 1 %}
+          {% assign rowfinder = loopindex | modulo: 4 %}
+          {% if rowfinder == 1 %}<div class="row person-row">{% endif %}
+            <div class="col-3 col-sm-3 col-md-3">
+              <a href={{person.url}}>
+                <img class="img-responsive img-resize fixed-image" style="border-radius: 20%;" src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
+              </a>
+              <h6 class="person-name"><a href={{person.url}}>{{ person.title }}</a></h6>
+              <p class="person-position">Postdoctoral Scholar</p>
+              <p class="person-inst">{{ person.institution }}</p>
+            </div>
+          {% if rowfinder == 0 %}</div>{% endif %}
+        {% endif %}{% endfor %}
+        {% if rowfinder != 0 %}</div>{% endif %}
+      </div>
+
+      <!-- Students -->
+      <div class="white-stripe" style="margin-bottom: 25px;">
+        <div class="container">
+          <div class="row" style="padding-bottom: 10.4px;">
+            <div class="col-sm-12">
+              <h1 class="black-text"><b>Students</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        {% assign loopindex = 0 %}
+        {% for person in people %}{% if person.position == "student" %}
+          {% assign loopindex = loopindex | plus: 1 %}
+          {% assign rowfinder = loopindex | modulo: 4 %}
+          {% if rowfinder == 1 %}<div class="row person-row">{% endif %}
+            <div class="col-3 col-sm-3 col-md-3">
+              <a href={{person.url}}>
+                <img class="img-responsive img-resize fixed-image" style="border-radius: 20%;" src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
+              </a>
+              <h6 class="person-name"><a href={{person.url}}>{{ person.title }}</a></h6>
+              {% if person.role %}<p class="person-position">{{ person.role }}</p>{% endif %}
+              <p class="person-inst">{{ person.institution }}</p>
+            </div>
+          {% if rowfinder == 0 %}</div>{% endif %}
+        {% endif %}{% endfor %}
+        {% if rowfinder != 0 %}</div>{% endif %}
+      </div>
+
+      <!-- Alumni -->
+      <div class="white-stripe" style="margin-bottom: 25px;">
+        <div class="container">
+          <div class="row" style="padding-bottom: 10.4px;">
+            <div class="col-sm-12">
+              <h1 class="black-text"><b>Alumni</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        {% assign loopindex = 0 %}
+        {% for person in people %}{% if person.position == "alumni" %}
+          {% assign loopindex = loopindex | plus: 1 %}
+          {% assign rowfinder = loopindex | modulo: 4 %}
+          {% if rowfinder == 1 %}<div class="row person-row">{% endif %}
+            <div class="col-3 col-sm-3 col-md-3">
+              <a href={{person.url}}>
+                <img class="img-responsive img-resize fixed-image" style="border-radius: 20%;" src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
+              </a>
+              <h6 class="person-name"><a href={{person.url}}>{{ person.title }}</a></h6>
+              <p class="person-position">{{ person.wherefrom }}</p>
+              <p class="person-position"><b>Currently:</b> {{ person.current }}</p>
+            </div>
+          {% if rowfinder == 0 %}</div>{% endif %}
+        {% endif %}{% endfor %}
+        {% if rowfinder != 0 %}</div>{% endif %}
+      </div>
+
+      <br><br>
+    </header>
+
+    {% include javascript.html %}
+    {% include footer.html %}
+  </body>
+</html>
