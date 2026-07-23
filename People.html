@@ -16,7 +16,7 @@ order: 3
       object-fit: cover;
     }
     .person-name { margin-bottom: 2px; }
-    .person-inst { color: #555; font-size: .9rem; margin: 0; }
+    .person-inst { color: #555; font-size: 1.05rem; margin: 0; }
     .lead-card img { border-radius: 20%; }
 
     /* PI vertical list */
@@ -25,7 +25,7 @@ order: 3
     .pi-photo img { width: 180px; height: 180px; object-fit: cover; border-radius: 20%; }
     .pi-bio { flex: 1 1 340px; padding-left: 24px; min-width: 280px; }
     .pi-bio h3 { margin-top: 0; }
-    .pi-bio .person-inst { font-size: 1rem; margin-bottom: 6px; }
+    .pi-bio .person-inst { font-size: 1.2rem; margin-bottom: 6px; }
     .lead-badge {
       display:inline-block; font-size:.7rem; text-transform:uppercase; letter-spacing:1px;
       background:#14213d; color:#fff; border-radius:6px; padding:3px 9px; margin-left:8px; vertical-align:middle;
@@ -98,21 +98,21 @@ order: 3
       </div>
 
       <div class="container">
-        {% assign loopindex = 0 %}
         {% for person in people %}{% if person.position == "afosr" %}
-          {% assign loopindex = loopindex | plus: 1 %}
-          {% assign rowfinder = loopindex | modulo: 4 %}
-          {% if rowfinder == 1 %}<div class="row person-row">{% endif %}
-            <div class="col-3 col-sm-3 col-md-3">
+          <div class="pi-row">
+            <div class="pi-photo">
               <a href={{person.url}}>
-                <img class="img-responsive img-resize fixed-image" style="border-radius: 20%;" src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
+                <img src="{{ relBase }}{{person.imgurl}}{{ person.img}}" alt="{{ person.title }}">
               </a>
-              <h6 class="person-name"><a href={{person.url}}>{{ person.title }}</a></h6>
-              <p class="person-inst">{{ person.institution }}</p>
             </div>
-          {% if rowfinder == 0 %}</div>{% endif %}
+            <div class="pi-bio">
+              <h3><a href={{person.url}}>{{ person.title }}</a></h3>
+              <p class="person-inst">{{ person.institution }}</p>
+              <hr class="person-sep">
+              <div class="person-excerpt">{{ person.content }}</div>
+            </div>
+          </div>
         {% endif %}{% endfor %}
-        {% if rowfinder != 0 %}</div>{% endif %}
       </div>
 
       <!-- Postdoctoral Scholars -->
