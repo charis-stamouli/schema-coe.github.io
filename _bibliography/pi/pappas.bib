@@ -6,10 +6,22 @@
 % Flags:  keywords={sub} submitted · keywords={press} in press · keywords={prep} in prep
 % =====================================================================
 
-@inproceedings{PappasPlaceholder2026,
-  author    = {George J. Pappas},
-  title     = {Placeholder --- add George J. Pappas's publications in pi/pappas.bib},
-  booktitle = {SCHEMA Center of Excellence},
-  year      = {2026},
-  abstract  = {This is a placeholder entry so the merged list shows every PI. Replace it with real publications.}
+@inproceedings{stamouli25cdc,
+  author={Stamouli, Charis and Tsiamis, Anastasios and Morari, Manfred and Pappas, George J.},
+  title={Layered Multirate Control of Constrained Linear Systems},
+  year={2025},
+  booktitle={2025 IEEE 64th Conference on Decision and Control (CDC)},
+  address={Rio de Janeiro, Brazil},
+  abstract= {Layered control architectures have been a standard paradigm for efficiently managing complex constrained systems. A typical architecture consists of: i) a higher layer, where a low-frequency planner controls a simple model of the system, and ii) a lower layer, where a high-frequency tracking controller guides a detailed model of the system toward the output of the higher-layer model. A fundamental problem in this layered architecture is the design of planners and tracking controllers that guarantee both higher- and lower-layer system constraints are satisfied. Toward addressing this problem, we introduce a principled approach for layered multirate control of linear systems subject to output and input constraints. Inspired by discrete-time simulation functions, we propose a streamlined control design that guarantees the lower-layer system tracks the output of the higher-layer system with computable precision. Using this design, we derive conditions and present a method for propagating the constraints of the lower-layer system to the higher-layer system. The propagated constraints are integrated into the design of an arbitrary planner that can handle higher-layer system constraints. Our framework ensures that the output constraints of the lower-layer system are satisfied at all high-level time steps, while respecting its input constraints at all low-level time steps. We apply our approach in a scenario of motion planning, highlighting its critical role in ensuring collision avoidance.},
+  url={https://arxiv.org/pdf/2504.10461}
+}
+
+@inproceedings{stamouli26cdc,
+  author={Stamouli, Charis and Tsiamis, Anastasios and Pappas, George J.},
+  title={Layered Control of Partially Observed Stochastic Systems},
+  year={2026},
+  booktitle={2026 IEEE 65th Conference on Decision and Control (CDC), (In Press)},
+  address={Honolulu, Hawaii, USA},
+  abstract= {Layered control is essential for managing complexity in large-scale systems, employing progressively coarser models at higher layers. While significant advances have been made for fully observable systems, the theoretical foundations of layered control under partial observations and stochastic noise remain underexplored. To address this gap, we propose a principled layered control framework for such settings. Given a state estimator at each layer, our approach ensures that the expected output distance between systems at successive layers remains within a priori computable bounds. This is achieved by introducing a novel notion of stochastic simulation functions for partially observed systems. For the class of linear systems with Kalman estimators, we provide a systematic construction of these functions along with the corresponding control design. We demonstrate our framework on two aerial robotic scenarios: an unmanned aerial vehicle and a hexacopter with a camera payload.},
+  url={https://arxiv.org/pdf/2604.11956}
 }
